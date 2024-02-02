@@ -1,0 +1,83 @@
+
+.container {
+    position: relative;
+    display: flex;
+}
+
+.gear {
+    width: 100px;
+    height: 100px;
+    background: red;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    animation-delay: 0.3s;
+    position: relative;
+}
+
+.gear-inner {
+    width: 70px;
+    height: 70px;
+    background: #111;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.teeth {
+    width: 120px;
+    height: 20px;
+    background: red;
+    position: relative;
+}
+
+.gear:nth-child(2) {
+    animation: spinback 2s linear infinite;
+}
+
+.teeth:nth-child(1) {
+    top: 42px;
+    left: -10px;
+}
+
+.teeth:nth-child(2) {
+    top: 20px;
+    left: -10px;
+    transform: rotateZ(90deg);
+}
+
+.teeth:nth-child(3) {
+    top: 0px;
+    left: -10px; 
+    transform: rotateZ(45deg);
+}
+
+.teeth:nth-child(4) {
+    top: -20px;
+    left: -10px;
+    transform: rotateZ(135deg);
+}
+
+.container {
+    gap: 10px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes spinback {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(-360deg);
+    }
+}
